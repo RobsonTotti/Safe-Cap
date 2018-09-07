@@ -1,5 +1,12 @@
-var ibmdb = require('ibm_db');
+var mysql = require('mysql');
 
-conn = "DRIVER={DB2};DATABASE=PANDORA;HOSTNAME=LOCALHOST;UID=dba;PWD=123;PORT=50000;PROTOCOL=TCPIP";
+var conn = function(){
+  return mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'root',
+    database:'safecap'
+  });
+};
 
 module.exports = conn;
