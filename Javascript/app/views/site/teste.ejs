@@ -1,0 +1,24 @@
+<head>
+  <!-- Add Sheetsu Web Client script to the head -->
+  <script src="//script.sheetsu.com/"></script>
+</head>
+
+<body>
+  <ul id="list"></ul>
+
+  <script>
+    // API returns array of objects
+    // Iterate over them and add each element as a list element
+    function successFunc(data) {
+      data.forEach(function(item, i) {
+        document.getElementById("list").innerHTML += "<li>" + item.name + " " + item.score + "</li>";
+      });
+    }
+
+    function errorFunc(e) {
+      console.log(e);
+    }
+
+    Sheetsu.read("https://sheetsu.com/apis/v1.0su/832a3eedc432/", {}).then(successFunc, errorFunc);
+  </script>
+</body>

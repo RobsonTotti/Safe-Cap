@@ -17,6 +17,10 @@ module.exports = function (app) {
 		controller.index(req, res);
 	});
 
+	app.get('/teste', function (req, res) {
+		controller.teste(req, res);
+	});
+
 	app.get('/graficos', function (req, res) {
 		//res.render('site/graficos');
 		controller.graficos(req, res);

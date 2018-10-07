@@ -11,9 +11,14 @@ module.exports.graficos = function (req, res) {
 };
 
 module.exports.login = function (req, res) {
+    console.log(res)
     res.render('site/login');
 };
 
+module.exports.teste = function (req, res) {
+    //console.log(res)
+    res.render('site/teste');
+};
 module.exports.cadUsuario = function (req, res) {
     res.render('site/cadUsuario');
 };
