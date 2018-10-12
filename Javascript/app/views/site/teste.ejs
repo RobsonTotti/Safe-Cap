@@ -1,24 +1,17 @@
-<head>
-  <!-- Add Sheetsu Web Client script to the head -->
-  <script src="//script.sheetsu.com/"></script>
-</head>
+<!DOCTYPE html>
+ 
+<html>
 
-<body>
-  <ul id="list"></ul>
+  <head>
+      <title> Usando a tag <img> </title>
+      <meta name="description" content="Como usar uma imagem em um site">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+ 
+  <body>
+  
+    <img src="/images/logo.jpg">
+    
+  </body>
 
-  <script>
-    // API returns array of objects
-    // Iterate over them and add each element as a list element
-    function successFunc(data) {
-      data.forEach(function(item, i) {
-        document.getElementById("list").innerHTML += "<li>" + item.name + " " + item.score + "</li>";
-      });
-    }
-
-    function errorFunc(e) {
-      console.log(e);
-    }
-
-    Sheetsu.read("https://sheetsu.com/apis/v1.0su/832a3eedc432/", {}).then(successFunc, errorFunc);
-  </script>
-</body>
+</html>

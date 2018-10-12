@@ -1,9 +1,9 @@
 var databaseModel = require('../models/databaseModel')();
 
 module.exports.index = function (req, res) {
-    databaseModel.all(function (err, result) {
-        res.render('site/home', { databases: result });
-    });
+    //databaseModel.all(function (err, result) {
+    res.render('site/home'/*, { databases: result }*/);
+    //});
 };
 
 module.exports.graficos = function (req, res) {
