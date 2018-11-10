@@ -66,36 +66,55 @@
             padding-right: 10%;
         }
 
-        .form{
+        .form {
             padding-top: 5%;
         }
-        .divider{
+
+        .divider {
             padding-left: 20%;
             padding-right: 20%;
+        }
+
+        .alerta{
+            float: right;
+            width: 20%;
         }
     </style>
 
     <meta charset="utf-8">
-    <title>NOME</title>
-
-
+    <title>DBMonitor</title>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">NOME</a>
+        <a class="navbar-brand" href="/"> <img src="/images/logo.jpg" width="40" height="40"> </a>
     </nav>
-    <form action="/login" method="GET" class="form">
+    
+
+    <% if(erros != "[object Object]"){ %>
+            
+        <% for(var i = 1; i < 2; i++){ %>
+
+        <div class="alerta alert alert-danger" role="alert">
+            <%= erros %>
+        </div>
+        
+        <% } %>
+ 
+    <% } %>
+
+    <form action="/" method="POST" class="form" onsubmit="validarCampos(this); return false;">
         <div class="form-group">
             <label for="exampleDropdownFormEmail1">E-mail</label>
-            <input type="email" class="form-control" id="exampleDropdownFormEmail1">
+            <input type="text" class="form-control" name="email">
+            
         </div>
         <div class="form-group">
             <label for="exampleDropdownFormPassword1">Senha</label>
-            <input type="password" class="form-control" id="exampleDropdownFormPassword1">
+            <input type="password" class="form-control" name="senha">
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+            <input type="checkbox" class="form-check-input" name="check">
             <label class="form-check-label" for="dropdownCheck">
                 Lembrar
             </label>
@@ -104,16 +123,29 @@
             <button type="submit" class="btn btn-primary">Acessar</button>
         </div>
     </form>
-    <div class="divider">
-        <div class="dropdown-divider"></div>
-    </div>
-    <div class="opcoes">
-        <a class="dropdown-item" href="#">Novo aqui? Cadastre-se</a>
-        <a class="dropdown-item" href="#">Perdeu sua senha?</a>
-    </div>
     </div>
 
+    <script type="text/javascript">
+        function validarCampos(frm) {
+            var erros = 0;
+            var mgs = "Preencha todos os campos";
 
+            if (frm.email.value == '') {
+                erros++;
+            }
+
+            if (frm.senha.value == '') {
+                erros++;
+            }
+
+            if (erros > 0) {
+                alert(mgs);
+                return false;
+            }
+
+            frm.submit();
+        }
+</script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

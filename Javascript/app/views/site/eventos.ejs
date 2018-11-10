@@ -99,7 +99,7 @@
 <body>
 
 	<nav class="fixar_barra navbar navbar-dark bg-dark">
-			<a class="navbar-brand" href="/">NOME</a>
+		<a class="navbar-brand" href="/">NOME</a>
 	</nav>
 
 	<!-- Sidebar -->
@@ -109,22 +109,23 @@
 
 			<div class="w3-sidebar w3-light-grey w3-card" style="width:15%">
 				<a href="/home" class="w3-bar-item w3-button">Início</a>
-				<a href="/graficos" class="w3-bar-item w3-button">Eventos</a>
+				<a href="/eventos" class="w3-bar-item w3-button">Eventos</a>
+				<a href="/temperatura" class="w3-bar-item w3-button">Temperatura</a>
 			</div>
 		</div>
 	</div>
-
+	
 	<div class="tabela">
 		<table class="fixar_top_table table table-striped">
-			<thead  class="thead-dark fixar_top_table">
+			<thead class="thead-dark fixar_top_table">
 				<th scope="col" width="30%">Data</th>
 				<th scope="col" width="30%">Temperatura C°</th>
 				<th scope="col" width="30%">Status</th>
 			</thead>
-			
+
 			<tbody sheetsu="https://sheetsu.com/apis/v1.0su/2733ba513349">
-				<tr>	
-					<td  width="35%">{{Carimbo de data/hora}}</td>
+				<tr>
+					<td width="35%">{{Carimbo de data/hora}}</td>
 					<td width="30%">{{Temperatura}}Cº</td>
 					<td width="33%">{{AX}}</td>
 				</tr>

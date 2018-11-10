@@ -11,10 +11,22 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style type="text/css">
-		.imagem{
+		.imagem {
+			padding-top: 10%;
 			width: 450pt;
-			height: 450pt;
+			height: 400pt;
+			opacity: 0.7;
 		}
+
+		.inputGroup {
+			float: right;
+			padding: 1%;
+			padding-left: 5%;
+			padding-right: 5%;
+			width: 85%;
+		}
+
+
 		.tabela {
 			float: right;
 			padding: 3pt;
@@ -37,34 +49,107 @@
 			background-color: #373f4c;
 			color: white;
 		}
+
+		body {
+			background-image: url("/images/logo.jpg");
+			background-repeat: no-repeat;
+			background-size: 350pt 300pt;
+			background-position: center;
+			background-attachment: fixed;
+
+		}
 	</style>
 
 	<meta charset="utf-8">
-	<title>NOME</title>
+	<title>Smart Cap</title>
 
 
 </head>
 
 <body>
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="/">NOME</a>
+		<a class="navbar-brand" href="/">SMART CAP</a>
 	</nav>
 
 	<!-- Sidebar -->
 	<div class="sidebar">
 
-			<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
-	
-				<div class="w3-sidebar w3-light-grey w3-card" style="width:15%">
-					<a href="/home" class="w3-bar-item w3-button">Início</a>
-					<a href="/graficos" class="w3-bar-item w3-button">Eventos</a>
-				</div>
+		<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+
+			<div class="w3-sidebar w3-light-grey w3-card" style="width:15%">
+				<a href="/home" class="w3-bar-item w3-button">Início</a>
+				<a href="/eventos" class="w3-bar-item w3-button">Eventos</a>
+				<a href="/temperatura" class="w3-bar-item w3-button">Temperatura</a>
 			</div>
 		</div>
+	</div>
 
-<div align="center">
-	<img src="/images/logo.jpg" class="imagem" >
-</div>
+	<!--<div align="center">
+		<img src="/images/logo.jpg" class="imagem">
+	</div>-->
+
+	<div class="inputGroup">
+		<div class="input-group mb-3">
+			<table>
+				<tr>
+					<td> <img src="/images/user.png" width="100" height="100">
+					</td>
+					<td>
+						<H1>
+							<%= valores[0].NOME%>
+						</H1>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div class="input-group mb-3">
+			<table>
+				<tr>
+					<td> <img src="/images/bed.png" width="100" height="100">
+					</td>
+					<td>
+						<% if(valores[0].STATUS == '1'){var status = "Cochilando"} %>
+						<% if(valores[0].STATUS == '0'){var status = "Acordado"} %>
+						<H1>
+							<%= status %>
+						</H1>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="input-group mb-3">
+			<table>
+				<tr>
+					<td> <img src="/images/temperature.png" width="100" height="100">
+					</td>
+					<td>
+						<H1>
+							<%= valores[0].TEMPERATURA%> °C
+						</H1>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="input-group mb-3">
+			<table>
+				<tr>
+					<td> <img src="/images/calendar.png" width="100" height="100">
+					</td>
+					<td>
+						<H1>
+								<%= valores[0].DTEVENTO%>
+						</H1>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>

@@ -1,6 +1,7 @@
 //var databaseModel = require('../models/databaseModel')();
 var controller = require('../controllers/controller');
 var controllerBusca = require('../controllers/controllerBusca');
+var controllerLogin = require('../controllers/controllerLogin');
 
 
 module.exports = function (app) {
@@ -14,16 +15,25 @@ module.exports = function (app) {
 	});
 
 	app.get('/home', function (req, res) {
-		controller.index(req, res);
+		controller.home(req, res);
+	});
+
+	app.post('/', function (req, res) {
+		controllerLogin.acessar(req, res);
 	});
 
 	app.get('/teste', function (req, res) {
 		controller.teste(req, res);
 	});
 
-	app.get('/graficos', function (req, res) {
+	app.get('/temperatura', function (req, res) {
 		//res.render('site/graficos');
-		controller.graficos(req, res);
+		controller.temperatura(req, res);
+	});
+
+	app.get('/eventos', function (req, res) {
+		//res.render('site/graficos');
+		controller.eventos(req, res);
 	});
 
 	app.get('/cadUsuario', function (req, res) {

@@ -1,12 +1,5 @@
-var mysql = require('mysql');
+var ibmdb = require('ibm_db');
 
-var conn = function(){
-  return mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'root',
-    database:'safecap'
-  });
-};
+conn = "DRIVER={DB2};DATABASE=SAFECAP;HOSTNAME=LOCALHOST;UID=dba;PWD=123;PORT=50000;PROTOCOL=TCPIP";
 
 module.exports = conn;
