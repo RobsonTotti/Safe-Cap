@@ -99,7 +99,7 @@
 <body>
 
 	<nav class="fixar_barra navbar navbar-dark bg-dark">
-		<a class="navbar-brand" href="/">NOME</a>
+		<a class="navbar-brand" href="/home">SMART CAP</a>
 	</nav>
 
 	<!-- Sidebar -->
@@ -123,16 +123,18 @@
 				<th scope="col" width="30%">Status</th>
 			</thead>
 
-			<tbody sheetsu="https://sheetsu.com/apis/v1.0su/2733ba513349">
-				<tr>
-					<td width="35%">{{Carimbo de data/hora}}</td>
-					<td width="30%">{{Temperatura}}Cº</td>
-					<td width="33%">{{AX}}</td>
-				</tr>
+			<tbody>
+				<% for(var i in valores){  %>
+					<tr>
+						<td width="35%"><%= valores[i].DTEVENTO%></td>
+						<td width="30%"><%= valores[i].TEMPERATURA%> Cº</td>
+						<% status = valores[i].STATUS%>
+						<%if(status == 0){status = 'Acordado'} else{status = 'Dormindo'}%>
+						<td width="33%"><%= status%></td>
+					</tr>
+				<% } %>
 			</tbody>
 		</table>
-
-		<script src="//load.sheetsu.com"></script>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>

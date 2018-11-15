@@ -13,7 +13,9 @@ module.exports.index = function (req, res) {
 };
 
 module.exports.eventos = function (req, res) {
-    res.render('site/eventos');
+    databaseModel.evento(function (err, result){
+        res.render('site/eventos', { valores: result });
+    });
 };
 
 module.exports.temperatura = function (req, res) {

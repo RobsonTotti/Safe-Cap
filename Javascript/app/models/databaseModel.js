@@ -17,6 +17,13 @@ module.exports = function () {
 		});
 	}
 
+	this.evento = function (retorno) {
+		ibmdb.open(db, function (erro, conn) {
+			consulta = "SELECT * FROM EVENTO ORDER BY IDEVENTO DESC LIMIT 30"
+			return conn.query(consulta, retorno);
+		});
+	}
+
 	this.login = function(dados, retorno){
 		ibmdb.open(db, function (erro, conn) {
 			var select = "SELECT COALESCE(COUNT(*), 0) AS COUNT FROM USUARIO WHERE EMAIL = '" + dados.email + "' AND SENHA = '" + dados.password + "'"
