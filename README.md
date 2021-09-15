@@ -16,5 +16,5 @@ A página web criada com NodeJs, exibe as informações coletadas pelo arduino e
 Utilizados Bootstrap e Google Charts.
 
 ## Sketch arduino
-<img src="https://raw.githubusercontent.com/RobsonTotti/ReadmeImages/main/SafeCap/image.png?raw=true"/>
+<img src="https://i.imgur.com/YicttYa.png"/>
 
